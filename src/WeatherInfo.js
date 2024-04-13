@@ -1,4 +1,6 @@
 import React from "react";
+import WeatherIcon from "./WeatherIcon";
+import WeatherUnits from "./WeatherUnits";
 
 export default function WeatherInfo(props){
     return (
@@ -11,17 +13,8 @@ export default function WeatherInfo(props){
         <div className="row mt-3">
           <div className="col-6">
             <div className="clearfix">
-              <img
-                src="https://s.yimg.com/os/weather/1.0.1/shadow_icon/60x60/partly_cloudy_day@2x.png"
-                alt="Clear Sky"
-              />
-              <span className="WeatherTemperature">
-                <span className="temperature">
-                  {" "}
-                  {Math.round(props.data.tempperature)}{" "}
-                </span>
-                <span className="unit">°C</span>
-              </span>
+              <WeatherIcon code={props.data.icon} />
+              <WeatherUnits celsius={props.data.temperature} />
             </div>
           </div>
           <div className="col-6">
