@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import WeatherInfo from "./WeatherInfo";
 import "./Weather.css"
 import axios from "axios"
 
@@ -14,6 +15,7 @@ export default function Weather(props) {
             city: response.data.name,
             description: response.data.weather[0].description,
             tempperature: response.data.main.temp,
+            icon:response.data.weather[0].icon,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed
         })
@@ -58,31 +60,7 @@ export default function Weather(props) {
           </div>
         </div>
       </form>
-      <h1>{weatherData.city}</h1>
-      <ul>
-        <li>Sunday 13:31</li>
-        <li className="text-capitalize">{weatherData.description}</li>
-      </ul>
-      <div className="row mt-3">
-        <div className="col-6">
-          <div className="clearfix">
-            <img
-              src="https://s.yimg.com/os/weather/1.0.1/shadow_icon/60x60/partly_cloudy_day@2x.png"
-              alt="Clear Sky"
-            />
-            <span className="WeatherTemperature">
-              <span className="temperature"> {Math.round(weatherData.tempperature)} </span>
-              <span className="unit">°C</span>
-            </span>
-          </div>
-        </div>
-        <div className="col-6">
-          <ul>
-            <li>Humidity: {weatherData.humidity}%</li>
-            <li>Wind: {weatherData.wind}Km/h</li>
-          </ul>
-        </div>
-      </div>
+      <WeatherInfo data={weatherData}/>
     </div>
   );
     } else {
