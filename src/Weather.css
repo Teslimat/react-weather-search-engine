@@ -2,6 +2,7 @@
 .Weather {
     border: 1px solid #DADDE1;
     border-radius: 4px;
+    box-shadow:3px 3px 3px 3px #878787;
     padding: 16px;
     max-width: 600px;
     color:#878787;
