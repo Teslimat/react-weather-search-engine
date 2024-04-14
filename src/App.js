@@ -1,6 +1,6 @@
 import React from "react";
 import Weather from "./Weather";
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           </a>{" "}
           and{" "}
           <a
-            href="https://chimerical-biscochitos-6b2998.netlify.app"
+            href="https://teslimat-weather-app.netlify.app/"
             target="_blank"
             rel="noreferrer">
             hosted on Netlify
