@@ -12,7 +12,9 @@ export default function WeatherForecast(props) {
     setLoaded(true);
   }
 
- 
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coordinates]);
 
   if (loaded) {
     console.log(forecast);
